@@ -1,0 +1,21 @@
+class Solution:
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        max = x
+        min = 0
+        mid = x//2
+        while min<=max:
+            m = mid**2
+            if m>x:
+                max = mid-1
+            elif m<x:
+                min = mid+1
+            else:
+                return mid
+            
+            mid =(max+min)//2
+        return mid
+                
