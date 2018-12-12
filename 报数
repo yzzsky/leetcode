@@ -1,0 +1,27 @@
+class Solution:
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        s = [1,1]
+        j = 2 
+        count=1
+        if n==1:
+            return "1"
+        elif n==2:
+            return "11"
+        else:
+            while j<n:
+                s1 = []
+                for i in range(len(s)) :
+                    if i < len(s)-1 and s[i]==s[i+1]:
+                        count +=1
+                    else:
+                        s1.append(count)
+                        s1.append(s[i])
+                        count=1
+                s = s1
+                j+=1
+            c_s = [str(i) for i in s]
+        return "".join(c_s)
