@@ -1,0 +1,14 @@
+class Solution:
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if len(prices)<2:
+            return 0
+        min_prices=prices[0]
+        ma =0
+        for i in prices:
+            min_prices=min(min_prices,i)
+            ma = max(i-min_prices,ma)
+        return ma
