@@ -1,0 +1,12 @@
+class Solution:
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        a = int(a,2)
+        b = int(b,2) # int("1010",2) 转为十进制 后面的2标定前面的字符串是多少进制的 可为 8 16 即 8->10 16->10
+        sum1 = a+b
+        c = bin(sum1) # 十进制转二进制 oct 转 八进制  hex 转 十六进制
+        return c[2:]
